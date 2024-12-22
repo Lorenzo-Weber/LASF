@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApostaController;
 
 // LOGIN
 
 Route::get('/', function () {
-    return view('login');
+    return view('home');
 });
 
 
@@ -55,4 +56,14 @@ Route::get('apostas/depositos', function () {
 
 Route::get('apostas/resultados', function () {
     return view('apostas.resultados');
+});
+
+// HOME
+
+Route::get('cadastrar/casa', function () {
+    return view('cadCasa');
+});
+
+Route::get('cadastrar/user', function () {
+    return view('cadUser');
 });

@@ -20,6 +20,14 @@ a {
     height: 90vh;
 }
 
+.center-h {
+    text-align: center;
+}
+
+.margin-1 {
+    margin: 1rem;
+}
+
 /*       HEADERS       */
 
 .Header {
@@ -29,7 +37,7 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 3rem;
-    background: rgba(180, 255, 180, 0.642);
+    background: rgba(152, 226, 152, 0.642);
 }
 
 .Header ul {
@@ -85,4 +93,26 @@ a {
     outline: none;
 }
 
-/*       FOOTER        */
+/*       HOME        */
+
+.menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu a {
+    padding: 1rem;
+    background: rgb(206, 206, 206);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu a:hover {
+    background: rgb(175, 175, 175);
+    box-shadow: 1px 1px 5px rgb(89, 89, 89);
+}
+
+/*       APOSTAS       */
+
+/*      APOSTAS APOSTAS       */
+

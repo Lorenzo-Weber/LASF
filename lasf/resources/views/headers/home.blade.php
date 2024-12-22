@@ -3,7 +3,7 @@
 </a>
 
 <ul>
-    <a href="">Home</a>
+    <a href="/">Home</a>
     <a href="/financeiro">Financeiro</a>
     <a href="/apostas">Apostas</a>
 </ul>

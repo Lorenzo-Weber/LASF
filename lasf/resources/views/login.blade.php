@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'LASF - Login')
+@section('title', 'Login')
 
 @section('header')
     @include('headers.home')
