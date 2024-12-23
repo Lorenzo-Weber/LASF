@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('financeiro_saques', function (Blueprint $table) {
+        Schema::create('cadastro_casa', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('banco');
-            $table->string('responsavel');
-            $table->string('conta');
-            $table->string('casa');
-            $table->float('valor');
-            $table->string('status');
+            $table->string('nome');
         });
     }
 
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('financeiro_saques');
+        Schema::dropIfExists('cadastro_casa');
     }
 };

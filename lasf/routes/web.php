@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ApostaController;
+use App\Http\Controllers\ApostaApostaController;
 
 // LOGIN
 
