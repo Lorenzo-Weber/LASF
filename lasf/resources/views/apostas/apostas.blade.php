@@ -23,7 +23,7 @@
             </thead>
             <tbody>
                 <!-- Loop para exibir os registros existentes -->
-                {{-- @foreach ($dados as $dado)
+                @foreach ($apostas as $dado)
                 <tr>
                     <td>{{ $dado->casa }}</td>
                     <td>{{ $dado->conta }}</td>
@@ -34,18 +34,18 @@
                         <button class="btn btn-primary btn-sm" onclick="editar({{ $dado->id }})">Editar</button>
                     </td>
                     <td>
-                        <form method="POST" action="{{ route('apostas.remover', $dado->id) }}">
+                        {{-- <form method="POST" action="{{ route('apostas.remover', $dado->id) }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Remover</button>
-                        </form>
+                        </form> --}}
                     </td>
                 </tr>
-                @endforeach --}}
+                @endforeach 
 
                 <!-- Linha para adicionar um novo registro -->
-                {{-- <tr>
-                    <form method="POST" action="{{ route('apostas.inserir') }}">
+                <tr>
+                    {{-- <form method="POST" action="{{ route('apostas.inserir') }}">
                         @csrf
                         <td><input type="text" name="casa" class="form-control" required></td>
                         <td><input type="text" name="conta" class="form-control" required></td>
@@ -55,8 +55,8 @@
                         <td colspan="2">
                             <button type="submit" class="btn btn-success btn-sm">Inserir</button>
                         </td>
-                    </form>
-                </tr> --}}
+                    </form> --}}
+                </tr>
             </tbody>
         </table>
     </div>

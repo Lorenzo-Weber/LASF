@@ -1,5 +1,8 @@
 <?php
 
+// CONTROLLERS
+use App\Http\Controllers\apostasApostasController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApostaApostaController;
 
@@ -42,9 +45,11 @@ Route::get('financeiro/cadastroBanco', function () {
 
 // APOSTAS
 
-Route::get('/apostas', function () {
-    return view('apostas.apostas');
-});
+Route::get('/apostas', [apostasApostasController::class, 'index'])->name('apostas.index');
+
+// Route::get('/apostas', function () {
+//     return view('apostas.apostas');
+// });
 
 Route::get('apostas/contas', function () {
     return view('apostas.contas');
