@@ -2,9 +2,20 @@
 
 // CONTROLLERS
 use App\Http\Controllers\apostasApostasController;
+use App\Http\Controllers\apostasContasController;
+use App\Http\Controllers\apostasDepositosController;
+use App\Http\Controllers\apostasResultadosController;
+use App\Http\Controllers\financeiroAquisicaoController;
+use App\Http\Controllers\financeiroCadastrosController;
+use App\Http\Controllers\financeiroCadastroBancoController;
+use App\Http\Controllers\financeiroDepositosController;
+use App\Http\Controllers\financeiroFinanceiroController;
+use App\Http\Controllers\financeiroLimitadasController;
+use App\Http\Controllers\financeiroSaquesController;
+use App\Http\Controllers\cadastroCasaController;
+use App\Http\Controllers\cadastroUserController;
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ApostaApostaController;
 
 // LOGIN
 
@@ -15,60 +26,22 @@ Route::get('/', function () {
 
 // FINANCEIRO
 
-Route::get('/financeiro', function () {
-    return view('financeiro.financeiro');
-});
-
-Route::get('financeiro/saques', function () {
-    return view('financeiro.saques');
-});
-
-Route::get('financeiro/depositos', function () {
-    return view('financeiro.depositos');
-});
-
-Route::get('financeiro/limitadas', function () {
-    return view('financeiro.limitadas');
-});
-
-Route::get('financeiro/aquisicao', function () {
-    return view('financeiro.aquisicao');
-});
-
-Route::get('financeiro/cadastros', function () {
-    return view('financeiro.cadastros');
-});
-
-Route::get('financeiro/cadastroBanco', function () {
-    return view('financeiro.cadastroBanco');
-});
+Route::get('/financeiro', [financeiroFinanceiroController::class, 'index'])->name('financeiro.index');
+Route::get('financeiro/saques', [financeiroSaquesController::class, 'index'])->name('financeiro.saques');
+Route::get('financeiro/depositos', [financeiroDepositosController::class, 'index'])->name('financeiro.depositos');
+Route::get('financeiro/limitadas', [financeiroLimitadasController::class, 'index'])->name('financeiro.limitadas');
+Route::get('financeiro/aquisicao', [financeiroAquisicaoController::class, 'index'])->name('financeiro.aquisicao');
+Route::get('financeiro/cadastros', [financeiroCadastrosController::class, 'index'])->name('financeiro.cadastros');
+Route::get('financeiro/cadastroBanco', [financeiroCadastroBancoController::class, 'index'])->name('financeiro.cadastroBanco');
 
 // APOSTAS
 
 Route::get('/apostas', [apostasApostasController::class, 'index'])->name('apostas.index');
-
-// Route::get('/apostas', function () {
-//     return view('apostas.apostas');
-// });
-
-Route::get('apostas/contas', function () {
-    return view('apostas.contas');
-});
-
-Route::get('apostas/depositos', function () {
-    return view('apostas.depositos');
-});
-
-Route::get('apostas/resultados', function () {
-    return view('apostas.resultados');
-});
+Route::get('apostas/contas', [apostasContasController::class, 'index'])->name('apostas.contas');
+Route::get('apostas/depositos', [apostasDepositosController::class, 'index'])->name('apostas.depositos');
+Route::get('apostas/resultados', [apostasResultadosController::class, 'index'])->name('apostas.resultados');
 
 // HOME
 
-Route::get('cadastrar/casa', function () {
-    return view('cadCasa');
-});
-
-Route::get('cadastrar/user', function () {
-    return view('cadUser');
-});
+Route::get('cadastrar/casa', [cadastroCasaController::class, 'index'])->name('cadCasa');
+Route::get('cadastrar/user', [cadastroUserController::class, 'index'])->name('cadUser');
