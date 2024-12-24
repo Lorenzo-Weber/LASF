@@ -37,7 +37,7 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 3rem;
-    background: rgba(152, 226, 152, 0.642);
+    background: #2596f8d4;
 }
 
 .Header ul {
@@ -52,7 +52,8 @@ a {
 }
 
 .Header ul a:hover {
-    background-color: #f1f1f1;
+    background-color: #8edbfe;
+    box-shadow: 1px 1px 5px black;
 }
 
 /*       LOGIN         */
@@ -73,14 +74,14 @@ a {
 .login-container button {
     padding: 0.5rem 1rem;
     border-radius: 10px;
-    background: #f1f1f1;
+    background: #2596f8d4;
     cursor: pointer;
     border: none;
     transition: all 0.3s ease-in-out;
 }
 
 .login-container button:hover {
-    background: rgba(180, 255, 180, 0.642);
+    background: #8edbfe;
 }
 
 .login-container input {
@@ -102,17 +103,12 @@ a {
 
 .menu a {
     padding: 1rem;
-    background: rgb(206, 206, 206);
+    background: #2596f8d4;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
 }
 
 .menu a:hover {
-    background: rgb(175, 175, 175);
+    background: #8edbfe;
     box-shadow: 1px 1px 5px rgb(89, 89, 89);
 }
-
-/*       APOSTAS       */
-
-/*      APOSTAS APOSTAS       */
-
