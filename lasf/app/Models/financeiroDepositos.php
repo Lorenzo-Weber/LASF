@@ -9,4 +9,14 @@ class financeiroDepositos extends Model
 {
     /** @use HasFactory<\Database\Factories\FinanceiroDepositosFactory> */
     use HasFactory;
+
+    protected $table = 'financeiro_depositos';
+
+    protected $fillable = [
+        'banco', 
+        'responsavel', 
+        'conta', 
+        'caso', 
+        'valor'
+    ];
 }

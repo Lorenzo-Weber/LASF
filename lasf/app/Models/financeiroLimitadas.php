@@ -9,4 +9,18 @@ class financeiroLimitadas extends Model
 {
     /** @use HasFactory<\Database\Factories\FinanceiroLimitadasFactory> */
     use HasFactory;
+
+    protected $table = 'financeiro_limitadas';
+
+    protected $fillable = [
+        'conta', 
+        'casa', 
+        'responsavel', 
+        'vendedor', 
+        'saldoFim', 
+        'Em saque', 
+        'sacado', 
+        'pagoCasa', 
+        'saldoRestante'
+    ];
 }

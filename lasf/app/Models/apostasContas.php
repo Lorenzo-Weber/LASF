@@ -9,4 +9,13 @@ class apostasContas extends Model
 {
     /** @use HasFactory<\Database\Factories\ApostasContasFactory> */
     use HasFactory;
+
+    protected $table = 'apostas_contas';
+
+    protected $fillable = [
+        'conta', 
+        'casa', 
+        'saldo', 
+        'status'
+    ];
 }

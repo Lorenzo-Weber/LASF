@@ -9,4 +9,8 @@ class cadastroCasa extends Model
 {
     /** @use HasFactory<\Database\Factories\CadastroCasaFactory> */
     use HasFactory;
+
+    protected $table = 'cadastro_casa';
+
+    protected $fillable = ['nome'];
 }

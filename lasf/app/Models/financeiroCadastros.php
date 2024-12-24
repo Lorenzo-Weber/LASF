@@ -9,4 +9,22 @@ class financeiroCadastros extends Model
 {
     /** @use HasFactory<\Database\Factories\FinanceiroCadastrosFactory> */
     use HasFactory;
+
+    protected $table = 'financeiro_cadastros';
+
+    protected $fillable = [
+        'nome', 
+        'cpf', 
+        'endereco', 
+        'cep', 
+        'numero', 
+        'email', 
+        'senha', 
+        'agente', 
+        'status', 
+        'loginBet', 
+        'senhaBet', 
+        'casa', 
+        'Data de nascimento'
+    ];
 }

@@ -12,5 +12,11 @@ class apostasApostas extends Model
 
     protected $table = "apostas_apostas";
 
-    protected $fillable = ['casa', 'conta', 'aposta', ]
+    protected $fillable = [
+        'casa', 
+        'conta', 
+        'aposta', 
+        'resultado', 
+        'retorno'
+    ];
 }
