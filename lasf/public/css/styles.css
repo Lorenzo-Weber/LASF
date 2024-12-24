@@ -42,6 +42,8 @@ a {
 
 .Header ul {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -53,7 +55,6 @@ a {
 
 .Header ul a:hover {
     background-color: #8edbfe;
-    box-shadow: 1px 1px 5px black;
 }
 
 /*       LOGIN         */
