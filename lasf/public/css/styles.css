@@ -23,6 +23,10 @@ body {
     height: 90vh;
 }
 
+h1 {
+    margin-bottom: 0;
+}
+
 .center-h {
     text-align: center;
 }
@@ -52,9 +56,8 @@ body {
 }
 
 .Header ul a {
-    padding: 0.6rem;
+    padding: 0.3rem;
     border-bottom: 1px solid transparent;
-    border-radius: 3px;
     transition: all 0.4s ease-in-out;
 }
 
