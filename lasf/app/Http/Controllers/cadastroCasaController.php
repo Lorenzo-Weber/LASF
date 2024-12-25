@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\cadastroCasa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class cadastroCasaController extends Controller
 {

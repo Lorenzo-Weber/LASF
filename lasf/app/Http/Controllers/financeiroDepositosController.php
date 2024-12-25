@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\financeiroDepositos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class financeiroDepositosController extends Controller
 {
     public function index () {
         $depositos = financeiroDepositos::all();
 
-        return view('financeiro.depositos', compact('depositos'));
+        $colunas = Schema::getColumnListing((new financeiroDepositos())->getTable());
+
+        $colunas = array_diff($colunas, ['updated_at']);
+        $colunas = array_map(function ($column) {
+            return $column == 'created_at' ? 'data' : $column;
+        }, $colunas);
+
+        return view('financeiro.depositos', compact('depositos', 'colunas'));
     }
 }
