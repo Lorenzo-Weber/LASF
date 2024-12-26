@@ -26,6 +26,8 @@
                             @foreach($casa as $info)
                                 <td>{{$info}}</td>
                             @endforeach
+                            <td><i class="fa-regular fa-pen-to-square yellow"></i></td>
+                            <td><i class="fa-solid fa-delete-left red"></i></td>
                         </tr>
                     @endforeach
                 </tr>

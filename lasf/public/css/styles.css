@@ -35,6 +35,14 @@ h1 {
     margin: 1rem;
 }
 
+.red {
+    color: red;
+}
+
+.yellow {
+    color: rgb(255, 177, 21);
+}
+
 /*       HEADERS       */
 
 .Header {

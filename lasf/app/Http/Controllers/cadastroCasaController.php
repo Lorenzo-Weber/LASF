@@ -25,4 +25,22 @@ class cadastroCasaController extends Controller
 
         return view('cadCasa', compact('casas', 'colunas'));
     }
+
+    public function store(Request $request) {
+        $casa = new cadastroCasa();
+        $casa->fill($request->all());
+        $casa->save();
+        return redirect()->route('index');
+    }
+
+    public function update (Request $request, cadastroCasa $casa) {
+        $casa->fill($request->all());
+        $casa->save();
+        return redirect()->route('index');
+    }
+
+    public function destroy (cadastroCasa $casa) {
+        $casa->delete();
+        return redirect()->route('index');
+    }
 }

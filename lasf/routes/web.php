@@ -18,8 +18,6 @@ use App\Http\Controllers\cadastroAdminController;
 
 use Illuminate\Support\Facades\Route;
 
-//                                          GET
-
 // LOGIN
 
 Route::get('/', function () {
@@ -46,12 +44,10 @@ Route::get('apostas/resultados', [apostasResultadosController::class, 'index'])-
 
 // HOME
 
-Route::get('cadastrar/casa', [cadastroCasaController::class, 'index'])->name('cadCasa');
+Route::get('cadastrar/casa', [cadastroCasaController::class, 'index'])->name('index');
+Route::post('cadastrar/casa', [cadastroCasaController::class, 'store'])->name('store');
+Route::put('/cadatrar/casa/{casa}', [cadastroCasaController::class, 'update'])->name('update');
+Route::delete('/cadatrar/casa/{casa}', [cadastroCasaController::class, 'destroy'])->name('destroy');
+
 Route::get('cadastrar/user', [cadastroUserController::class, 'index'])->name('cadUser');
 Route::get('cadastrar/admin', [cadastroAdminController::class, 'index'])->name('cadAdmin');
-
-//                                              POST
-
-// HOME
-
-Route::post('cadastrar/casa', [cadastroCasaController::class, 'store'])->name('cadCasa.store');
