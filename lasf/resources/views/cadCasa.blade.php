@@ -12,14 +12,24 @@
         <table class="table table-striped table-boarded">
             <thead class="table-dark">
                 <tr>
-                    <th>#</th>
                     @foreach ($colunas as $coluna)
                         <th>{{ ucfirst($coluna) }}</th>
                     @endforeach
-                    <th>#</th>
+                    <th>Editar</th>
+                    <th>Apagar</th>
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    @foreach($casas as $casa)
+                        <tr>
+                            @foreach($casa as $info)
+                                <td>{{$info}}</td>
+                            @endforeach
+                        </tr>
+                    @endforeach
+                </tr>
+                
                 <tr>
                     <th>-</th>
                     <form action="" method="POST">

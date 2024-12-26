@@ -9,7 +9,12 @@ use Illuminate\Support\Facades\Schema;
 class cadastroCasaController extends Controller
 {
     public function index () {
-        $casa = cadastroCasa::all();
+        $casas = cadastroCasa::all()->map(function ($casa) {
+            $data = $casa->toArray();
+            unset($data['updated_at']); 
+            return $data;
+        });
+        
 
         $colunas = Schema::getColumnListing('cadastro_casa');
 
@@ -18,6 +23,6 @@ class cadastroCasaController extends Controller
             return $column == 'created_at' ? 'data' : $column;
         }, $colunas);
 
-        return view('cadCasa', compact('casa', 'colunas'));
+        return view('cadCasa', compact('casas', 'colunas'));
     }
 }
