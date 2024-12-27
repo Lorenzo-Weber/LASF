@@ -19,4 +19,25 @@ class financeiroSaquesController extends Controller
 
         return view('financeiro.saques', compact('saques', 'colunas'));
     }
+
+    public function store (Request $request) {
+        $saque = new financeiroSaques();
+        $saque->fill($request->all());
+        $saque->created_at = now();
+        $saque->save();
+
+        return redirect()->route('financeiroSaques.index');
+    }
+
+    public function update (Request $request, financeiroSaques $saque) {
+        $saque->fill($request->all());
+        $saque->save();
+
+        return redirect()->route('financeiroSaques.index');
+    }
+
+    public function destroy (financeiroSaques $saque) {
+        $saque->delete();
+        return redirect()->route('financeiroSaques.index');
+    }
 }

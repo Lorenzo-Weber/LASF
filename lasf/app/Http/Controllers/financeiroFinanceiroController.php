@@ -19,4 +19,25 @@ class financeiroFinanceiroController extends Controller
 
         return view('financeiro.financeiro', compact('financeiro', 'colunas'));
     }
+
+    public function store (Request $request) {
+        $financeiro = new financeiroFinanceiro();
+        $financeiro->fill($request->all());
+        $financeiro->created_at = now();
+        $financeiro->save();
+
+        return redirect()->route('financeiroFinanceiro.index');
+    }
+
+    public function update (Request $request, financeiroFinanceiro $financeiro) {
+        $financeiro->fill($request->all());
+        $financeiro->save();
+
+        return redirect()->route('financeiroFinanceiro.index');
+    }
+
+    public function destroy (financeiroFinanceiro $financeiro) {
+        $financeiro->delete();
+        return redirect()->route('financeiroFinanceiro.index');
+    }
 }

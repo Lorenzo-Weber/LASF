@@ -24,16 +24,42 @@ Route::get('/', function () {
     return view('home');
 });
 
-
 // FINANCEIRO
 
-Route::get('/financeiro', [financeiroFinanceiroController::class, 'index'])->name('financeiro.index');
-Route::get('financeiro/saques', [financeiroSaquesController::class, 'index'])->name('financeiro.saques');
-Route::get('financeiro/depositos', [financeiroDepositosController::class, 'index'])->name('financeiro.depositos');
-Route::get('financeiro/limitadas', [financeiroLimitadasController::class, 'index'])->name('financeiro.limitadas');
-Route::get('financeiro/aquisicao', [financeiroAquisicaoController::class, 'index'])->name('financeiro.aquisicao');
-Route::get('financeiro/cadastros', [financeiroCadastrosController::class, 'index'])->name('financeiro.cadastros');
-Route::get('financeiro/cadastroBanco', [financeiroCadastroBancoController::class, 'index'])->name('financeiro.cadastroBanco');
+Route::get('/financeiro', [financeiroFinanceiroController::class, 'index'])->name('financeiroFinanceiro.index');
+Route::post('/financeiro', [financeiroFinanceiroController::class, 'store'])->name('financeiroFinanceiro.store');
+Route::put('/financeiro/{financeiro}', [financeiroFinanceiroController::class, 'update'])->name('financeiroFinanceiro.update');
+Route::delete('/financeiro/{financeiro}', [financeiroFinanceiroController::class, 'destroy'])->name('financeiroFinanceiro.destroy');
+
+Route::get('financeiro/saques', [financeiroSaquesController::class, 'index'])->name('financeiroSaques.index');
+Route::post('financeiro/saques', [financeiroSaquesController::class, 'store'])->name('financeiroSaques.store');
+Route::put('/financeiro/saques/{saque}', [financeiroSaquesController::class, 'update'])->name('financeiroSaques.update');
+Route::delete('/financeiro/saques/{saque}', [financeiroSaquesController::class, 'destroy'])->name('financeiroSaques.destroy');
+
+Route::get('financeiro/depositos', [financeiroDepositosController::class, 'index'])->name('financeiroDepositos.index');
+Route::post('financeiro/depositos', [financeiroDepositosController::class, 'store'])->name('financeiroDepositos.store');
+Route::put('/financeiro/depositos/{deposito}', [financeiroDepositosController::class, 'update'])->name('financeiroDepositos.update');
+Route::delete('/financeiro/depositos/{deposito}', [financeiroDepositosController::class, 'destroy'])->name('financeiroDepositos.destroy');
+
+Route::get('financeiro/limitadas', [financeiroLimitadasController::class, 'index'])->name('financeiroLimitadas.index');
+Route::post('financeiro/limitadas', [financeiroLimitadasController::class, 'store'])->name('financeiroLimitadas.store');
+Route::put('/financeiro/limitadas/{limitada}', [financeiroLimitadasController::class, 'update'])->name('financeiroLimitadas.update');
+Route::delete('/financeiro/limitadas/{limitada}', [financeiroLimitadasController::class, 'destroy'])->name('financeiroLimitadas.destroy');
+
+Route::get('financeiro/aquisicao', [financeiroAquisicaoController::class, 'index'])->name('financeiroAquisicao.index');
+Route::post('financeiro/aquisicao', [financeiroAquisicaoController::class, 'store'])->name('financeiroAquisicao.store');
+Route::put('/financeiro/aquisicao/{aquisicao}', [financeiroAquisicaoController::class, 'update'])->name('financeiroAquisicao.update');
+Route::delete('/financeiro/aquisicao/{aquisicao}', [financeiroAquisicaoController::class, 'destroy'])->name('financeiroAquisicao.destroy');
+
+Route::get('financeiro/cadastros', [financeiroCadastrosController::class, 'index'])->name('financeiroCadastros.index');
+Route::post('financeiro/cadastros', [financeiroCadastrosController::class, 'store'])->name('financeiroCadastros.store');
+Route::put('/financeiro/cadastros/{cadastro}', [financeiroCadastrosController::class, 'update'])->name('financeiroCadastros.update');
+Route::delete('/financeiro/cadastros/{cadastro}', [financeiroCadastrosController::class, 'destroy'])->name('financeiroCadastros.destroy');
+
+Route::get('financeiro/cadastroBanco', [financeiroCadastroBancoController::class, 'index'])->name('financeiroCadastroBanco.index');
+Route::post('financeiro/cadastroBanco', [financeiroCadastroBancoController::class, 'store'])->name('financeiroCadastroBanco.store');
+Route::put('/financeiro/cadastroBanco/{cadastroBanco}', [financeiroCadastroBancoController::class, 'update'])->name('financeiroCadastroBanco.update');
+Route::delete('/financeiro/cadastroBanco/{cadastroBanco}', [financeiroCadastroBancoController::class, 'destroy'])->name('financeiroCadastroBanco.destroy');
 
 // APOSTAS
 

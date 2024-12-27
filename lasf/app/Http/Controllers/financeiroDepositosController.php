@@ -20,4 +20,25 @@ class financeiroDepositosController extends Controller
 
         return view('financeiro.depositos', compact('depositos', 'colunas'));
     }
+
+    public function store(Request $request) {
+        $deposito = new financeiroDepositos();
+
+        $deposito->fill($request->all());
+        $deposito->created_at = now();
+
+        $deposito->save();
+        return redirect()->route('financeiroDepositos.index');
+    }
+
+    public function update (Request $request, financeiroDepositos $deposito) {
+        $deposito->fill($request->all());
+        $deposito->save();
+        return redirect()->route('financeiroDepositos.index');
+    }
+
+    public function destroy (financeiroDepositos $deposito) {
+        $deposito->delete();
+        return redirect()->route('financeiroDepositos.index');
+    }
 }

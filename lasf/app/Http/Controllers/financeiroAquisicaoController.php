@@ -19,4 +19,26 @@ class financeiroAquisicaoController extends Controller
 
         return view('financeiro.aquisicao', compact('aquisicao', 'colunas'));
     }
+
+    public function store(Request $request) {
+        $aquisicao = new financeiroAquisicao();
+        $aquisicao->fill($request->all());
+        $aquisicao->created_at = now();
+        $aquisicao->save();
+
+        return redirect()->route('financeiroAquisicao.index');
+    }
+
+    public function update(Request $request, financeiroAquisicao $aquisicao) {
+        $aquisicao->fill($request->all());
+        $aquisicao->created_at = now();
+        $aquisicao->save();
+
+        return redirect()->route('financeiroAquisicao.index');
+    }
+
+    public function destroy(financeiroAquisicao $aquisicao) {
+        $aquisicao->delete();
+        return redirect()->route('financeiroAquisicao.index');
+    }
 }

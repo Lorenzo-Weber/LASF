@@ -19,4 +19,25 @@ class financeiroCadastrosController extends Controller
 
         return view('financeiro.cadastros', compact('cadastro', 'colunas'));
     }
+
+    public function store(Request $request) {
+        $cadastro = new financeiroCadastros();
+
+        $cadastro->fill($request->all());
+        $cadastro->created_at = now();
+
+        $cadastro->save();
+        return redirect()->route('financeiroCadastros.index');
+    }
+
+    public function update (Request $request, financeiroCadastros $cadastro) {
+        $cadastro->fill($request->all());
+        $cadastro->save();
+        return redirect()->route('financeiroCadastros.index');
+    }
+
+    public function destroy (financeiroCadastros $cadastro) {
+        $cadastro->delete();
+        return redirect()->route('financeiroCadastros.index');
+    }
 }

@@ -19,4 +19,25 @@ class financeiroLimitadasController extends Controller
 
         return view('financeiro.limitadas', compact('limitadas', 'colunas'));
     }
+
+    public function store(Request $request) {
+        $limitada = new financeiroLimitadas();
+
+        $limitada->fill($request->all());
+        $limitada->created_at = now();
+
+        $limitada->save();
+        return redirect()->route('financeiroLimitadas.index');
+    }
+
+    public function update (Request $request, financeiroLimitadas $limitada) {
+        $limitada->fill($request->all());
+        $limitada->save();
+        return redirect()->route('financeiroLimitadas.index');
+    }
+
+    public function destroy (financeiroLimitadas $limitada) {
+        $limitada->delete();
+        return redirect()->route('financeiroLimitadas.index');
+    }
 }

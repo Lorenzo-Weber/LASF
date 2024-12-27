@@ -20,4 +20,25 @@ class financeiroCadastroBancoController extends Controller
 
         return view('financeiro.cadastroBanco', compact('cadastroBanco', 'colunas'));
     }
+
+    public function store(Request $request) {
+        $cadastroBanco = new financeiroCadastroBanco();
+
+        $cadastroBanco->fill($request->all());
+        $cadastroBanco->created_at = now();
+
+        $cadastroBanco->save();
+        return redirect()->route('financeiroCadastroBanco.index');
+    }
+
+    public function update (Request $request, financeiroCadastroBanco $cadastroBanco) {
+        $cadastroBanco->fill($request->all());
+        $cadastroBanco->save();
+        return redirect()->route('financeiroCadastroBanco.index');
+    }
+
+    public function destroy (financeiroCadastroBanco $cadastroBanco) {
+        $cadastroBanco->delete();
+        return redirect()->route('financeiroCadastroBanco.index');
+    }
 }
