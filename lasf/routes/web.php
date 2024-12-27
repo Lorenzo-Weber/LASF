@@ -44,10 +44,12 @@ Route::get('apostas/resultados', [apostasResultadosController::class, 'index'])-
 
 // HOME
 
-Route::get('cadastrar/casa', [cadastroCasaController::class, 'index'])->name('index');
-Route::post('cadastrar/casa', [cadastroCasaController::class, 'store'])->name('store');
-Route::put('/cadatrar/casa/{casa}', [cadastroCasaController::class, 'update'])->name('update');
-Route::delete('/cadatrar/casa/{casa}', [cadastroCasaController::class, 'destroy'])->name('destroy');
+Route::get('cadastrar/casa', [cadastroCasaController::class, 'index'])->name('casa.index');
+Route::post('cadastrar/casa', [cadastroCasaController::class, 'store'])->name('casa.store');
+Route::put('/cadatrar/casa/{casa}', [cadastroCasaController::class, 'update'])->name('casa.update');
+Route::delete('/cadatrar/casa/{casa}', [cadastroCasaController::class, 'destroy'])->name('casa.destroy');
 
-Route::get('cadastrar/user', [cadastroUserController::class, 'index'])->name('cadUser');
-Route::get('cadastrar/admin', [cadastroAdminController::class, 'index'])->name('cadAdmin');
+Route::get('cadastrar/user', [cadastroUserController::class, 'index'])->name('user.index');
+Route::post('cadastrar/user', [cadastroUserController::class, 'store'])->name('user.store');
+Route::put('/cadatrar/user/{user}', [cadastroUserController::class, 'update'])->name('user.update');
+Route::delete('/cadatrar/user/{user}', [cadastroUserController::class, 'destroy'])->name('user.destroy');

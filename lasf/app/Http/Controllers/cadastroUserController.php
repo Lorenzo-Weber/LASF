@@ -20,4 +20,25 @@ class cadastroUserController extends Controller
 
         return view('cadUser', compact('user', 'colunas'));
     }
+
+    public function store(Request $request) {
+        $user = new cadastroUser();
+        
+        $user->fill($request->all());
+        $user->created_at = now(); 
+        
+        $user->save();
+        return redirect()->route('user.index');
+    }
+
+    public function update (Request $request, cadastroUser $user) {
+        $user->fill($request->all());
+        $user->save();
+        return redirect()->route('user.index');
+    }
+
+    public function destroy (cadastroUser $user) {
+        $user->delete();
+        return redirect()->route('user.index');
+    }
 }

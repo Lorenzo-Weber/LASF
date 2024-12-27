@@ -12,7 +12,6 @@
     <ul class="menu">
         <a href="/cadastrar/casa">Cadastrar Casa</a>
         <a href="/cadastrar/user">Cadastrar Usuario</a>
-        <a href="/cadastrar/admin">Cadastrar Admin</a>
     </ul>
 </div>
 

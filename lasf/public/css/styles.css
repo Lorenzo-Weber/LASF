@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: none;
 }
 
 a {
@@ -127,4 +128,17 @@ h1 {
 
 .menu a:hover {
     box-shadow: 1px 1px 5px rgb(89, 89, 89);
+}
+
+/*       TABLE         */
+
+.input-table {
+    border-radius: 5px;
+    border: 1px solid transparent;
+    padding: 0.5rem;
+}
+
+.input-table:focus {
+    border: 1px solid #8edbfe;
+    outline: none;
 }

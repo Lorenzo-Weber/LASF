@@ -28,18 +28,18 @@ class cadastroCasaController extends Controller
         $casa->created_at = now(); 
         
         $casa->save();
-        return redirect()->route('index');
+        return redirect()->route('casa.index');
     }
     
 
     public function update (Request $request, cadastroCasa $casa) {
         $casa->fill($request->all());
         $casa->save();
-        return redirect()->route('index');
+        return redirect()->route('casa.index');
     }
 
     public function destroy (cadastroCasa $casa) {
         $casa->delete();
-        return redirect()->route('index');
+        return redirect()->route('casa.index');
     }
 }
