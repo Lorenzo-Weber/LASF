@@ -19,4 +19,25 @@ class apostasApostasController extends Controller
 
         return view('apostas.apostas', compact('apostas', 'colunas'));
     }
+
+    public function store(Request $request) {
+        $aposta = new apostasApostas();
+        
+        $aposta->fill($request->all());
+        $aposta->created_at = now(); 
+        
+        $aposta->save();
+        return redirect()->route('apostasApostas.index');
+    }
+
+    public function update (Request $request, apostasApostas $aposta) {
+        $aposta->fill($request->all());
+        $aposta->save();
+        return redirect()->route('apostasApostas.index');
+    }
+
+    public function destroy (apostasApostas $aposta) {
+        $aposta->delete();
+        return redirect()->route('apostasApostas.index');
+    }
 }

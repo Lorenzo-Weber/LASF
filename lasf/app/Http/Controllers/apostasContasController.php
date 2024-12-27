@@ -20,4 +20,25 @@ class apostasContasController extends Controller
 
         return view('apostas.contas', compact('contas', 'colunas'));
     }
+
+    public function store(Request $request) {
+        $conta = new apostasContas();
+        
+        $conta->fill($request->all());
+        $conta->created_at = now(); 
+        
+        $conta->save();
+        return redirect()->route('apostasContas.index');
+    }
+
+    public function update (Request $request, apostasContas $conta) {
+        $conta->fill($request->all());
+        $conta->save();
+        return redirect()->route('apostasContas.index');
+    }
+
+    public function destroy (apostasContas $conta) {
+        $conta->delete();
+        return redirect()->route('apostasContas.index');
+    }
 }

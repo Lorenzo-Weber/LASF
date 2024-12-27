@@ -37,10 +37,25 @@ Route::get('financeiro/cadastroBanco', [financeiroCadastroBancoController::class
 
 // APOSTAS
 
-Route::get('/apostas', [apostasApostasController::class, 'index'])->name('apostas.index');
-Route::get('apostas/contas', [apostasContasController::class, 'index'])->name('apostas.contas');
-Route::get('apostas/depositos', [apostasDepositosController::class, 'index'])->name('apostas.depositos');
-Route::get('apostas/resultados', [apostasResultadosController::class, 'index'])->name('apostas.resultados');
+Route::get('/apostas', [apostasApostasController::class, 'index'])->name('apostasApostas.index');
+Route::post('/apostas', [apostasApostasController::class, 'store'])->name('apostasApostas.store');
+Route::put('/apostas/{aposta}', [apostasApostasController::class, 'update'])->name('apostasApostas.update');
+Route::delete('/apostas/{aposta}', [apostasApostasController::class, 'destroy'])->name('apostasApostas.destroy');
+
+Route::get('apostas/contas', [apostasContasController::class, 'index'])->name('apostasContas.index');
+Route::post('apostas/contas', [apostasContasController::class, 'store'])->name('apostasContas.store');
+Route::put('/apostas/contas/{conta}', [apostasContasController::class, 'update'])->name('apostasContas.update');
+Route::delete('/apostas/contas/{conta}', [apostasContasController::class, 'destroy'])->name('apostasContas.destroy');
+
+Route::get('apostas/depositos', [apostasDepositosController::class, 'index'])->name('apostasDepositos.index');
+Route::post('apostas/depositos', [apostasDepositosController::class, 'store'])->name('apostasDepositos.store');
+Route::put('/apostas/depositos/{deposito}', [apostasDepositosController::class, 'update'])->name('apostasDepositos.update');
+Route::delete('/apostas/depositos/{deposito}', [apostasDepositosController::class, 'destroy'])->name('apostasDepositos.destroy');
+
+Route::get('apostas/resultados', [apostasResultadosController::class, 'index'])->name('apostasResultados.index');
+Route::post('apostas/resultados', [apostasResultadosController::class, 'store'])->name('apostasResultados.store');
+Route::put('/apostas/resultados/{resultado}', [apostasResultadosController::class, 'update'])->name('apostasResultados.update');
+Route::delete('/apostas/resultados/{resultado}', [apostasResultadosController::class, 'destroy'])->name('apostasResultados.destroy');
 
 // HOME
 

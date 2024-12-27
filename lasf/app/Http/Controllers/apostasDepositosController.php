@@ -20,4 +20,25 @@ class apostasDepositosController extends Controller
 
         return view('apostas.depositos', compact('depositos', 'colunas'));
     }
+
+    public function store (Request $request) {
+        $deposito = new apostasDepositos();
+        
+        $deposito->fill($request->all());
+        $deposito->created_at = now(); 
+        
+        $deposito->save();
+        return redirect()->route('apostasDepositos.index');
+    }
+
+    public function update (Request $request, apostasDepositos $deposito) {
+        $deposito->fill($request->all());
+        $deposito->save();
+        return redirect()->route('apostasDepositos.index');
+    }
+
+    public function destroy (apostasDepositos $deposito) {
+        $deposito->delete();
+        return redirect()->route('apostasDepositos.index');
+    }
 }
