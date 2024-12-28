@@ -27,6 +27,8 @@ class financeiroDepositosController extends Controller
         $deposito->fill($request->all());
         $deposito->created_at = now();
 
+        // dd($deposito);
+
         $deposito->save();
         return redirect()->route('financeiroDepositos.index');
     }

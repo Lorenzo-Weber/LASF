@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('responsavel');
             $table->string('vendedor');
             $table->float('saldoFim');
-            $table->float('Em Saque');
+            $table->float('Em_saque');
             $table->float('sacado');
             $table->float('pagoCasa');
             $table->float('saldoRestante');

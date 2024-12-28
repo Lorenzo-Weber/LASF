@@ -16,7 +16,7 @@ class financeiroDepositos extends Model
         'banco', 
         'responsavel', 
         'conta', 
-        'caso', 
+        'casa', 
         'valor'
     ];
 }

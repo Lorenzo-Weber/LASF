@@ -18,7 +18,7 @@ class financeiroLimitadas extends Model
         'responsavel', 
         'vendedor', 
         'saldoFim', 
-        'Em saque', 
+        'Em_saque', 
         'sacado', 
         'pagoCasa', 
         'saldoRestante'
